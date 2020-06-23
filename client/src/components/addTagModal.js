@@ -58,7 +58,6 @@ class Tags extends Component {
         this.setState({ tag: event.target.value });
     }
     componentWillReceiveProps(nextProps) {
-        console.log("Tags : " + nextProps.tags);
         if (nextProps.tags != this.state.selectedTags.join()) {
             if (nextProps.tags == null) {
                 this.setState({
@@ -96,10 +95,10 @@ class Tags extends Component {
                             </div>
                             <div class="modal-body pb-0">
                                 <div className="row mb-2">
-                                    <div className="col-lg-10 pr-0 mb-0">
+                                    <div className="col-lg-10 pr-lg-0 mb-lg-0 mb-2">
                                         <TextField id="tagsTextBox" label="Tag" variant="outlined" className="w-100 fileUploadBorderRadiusZero" onChange={this.onHandleChange} value={this.state.tag} />
                                     </div>
-                                    <div className="col-lg-2 pl-0 mb-0" style={{ 'display': 'flex' }}>
+                                    <div className="col-lg-2 pl-lg-0 mb-0" style={{ 'display': 'flex' }}>
                                         <label className="w-100 mb-0" id="uploadButtonDiv">
                                             <Button variant="contained" color="primary" component="span" className="w-100 uploadButton" onClick={() => this.addTag()}>
                                                 Add

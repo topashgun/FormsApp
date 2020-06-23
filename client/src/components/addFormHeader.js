@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import TextField from '@material-ui/core/TextField';
 class addForm extends Component {
     constructor() {
         super()
@@ -7,17 +7,21 @@ class addForm extends Component {
 
     render() {
         return (
-            <div className="row m-0 py-3">
-                <div className="col-lg-8 offset-lg-2">
-                    <h5 className="text-center">Forms</h5>
-                </div>
-                <div className="col-lg-2">
-                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#addFormModal" onClick={() => this.props.editTypeIndex('add', '-')}>
-                        Add Form
+            <div className="col-12">
+                <div className="row py-3" style={{ 'alignItems': 'flex-end' }}>
+                    <div className="col-lg-4 col-12">
+                        <TextField id="SearchBox" label="Search" variant="outlined" className="w-100" onChange={this.props.onChangeSearch} value={this.props.search} />
+                    </div>
+                    <div className="col-lg-4 col-6 mt-lg-0 mt-2">
+                        <h5 className="text-lg-center mb-0 text-left">Forms</h5>
+                    </div>
+                    <div className="col-lg-2 offset-lg-2 col-6 mt-lg-0 mt-2">
+                        <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#addFormModal" onClick={() => this.props.editTypeIndex('add', '-')}>
+                            Add Form
                     </button>
+                    </div>
                 </div>
             </div>
-
         )
     }
 }

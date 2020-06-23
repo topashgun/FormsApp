@@ -54,7 +54,7 @@
   font-weight: 500;
   background-color: #4caf50;
 }
-.maxWidth80 {
+.modalDialogWidth {
   max-width: 80%;
 }
 .MuiExpansionPanelSummary-content.Mui-expanded {
@@ -65,6 +65,10 @@
 }
 .tagButton {
   margin: 5px;
+}
+.btn-outline-primary.tagButton:hover {
+  background: transparent !important;
+  color: #007bff;
 }
 .selectedTags {
   text-align: center;
@@ -82,4 +86,21 @@
 td.panelBodyTableIcon {
   width: 35px;
   text-align: center;
+}
+#SearchBox {
+  padding: 11px 14px;
+}
+label[for="SearchBox"] {
+  transform: translate(14px, 13px) scale(1);
+}
+@media only screen and (max-width: 767px) {
+  .modalDialogWidth {
+    max-width: 100%;
+  }
+  .uploadButton {
+    border-radius: 4px !important;
+  }
+  .jumbotron .MuiExpansionPanelSummary-root.Mui-expanded {
+    min-height: 60px;
+  }
 }

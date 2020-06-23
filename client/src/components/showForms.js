@@ -4,6 +4,7 @@ import AddNoteModal from './addNoteModal';
 import AddTagModal from './addTagModal';
 import UserCard from './userCard'
 import Swal from 'sweetalert2'
+import AddFormHeader from './addFormHeader'
 class ShowForm extends Component {
     constructor() {
         super()
@@ -11,13 +12,16 @@ class ShowForm extends Component {
             forms: [],
             noteIndex: '',
             note: '',
-            tags: ''
+            tags: '',
+            search: '',
+            populateForms: []
         }
         this.addNote = this.addNote.bind(this);
         this.showForms = this.showForms.bind(this);
         this.updateTags = this.updateTags.bind(this);
         this.deleteForm = this.deleteForm.bind(this);
         this.deleteFormId = this.deleteFormId.bind(this);
+        this.onChangeSearch = this.onChangeSearch.bind(this);
     }
 
     componentDidMount() {
@@ -35,8 +39,10 @@ class ShowForm extends Component {
     showForms() {
         Axios.get('/getAllForms').then(response => {
             this.setState({
-                forms: response.data
+                forms: response.data,
+                populateForms: response.data
             })
+            console.log(JSON.stringify(this.state.forms))
         })
     }
     updateTags(tags) {
@@ -76,16 +82,39 @@ class ShowForm extends Component {
             this.props.populateData(false);
         }
     }
+    onChangeSearch(event) {
+        this.setState({ search: event.target.value });
+        const items = this.state.forms.filter((data) => {
+            if (event.target.value == null)
+                return data
+            else if (data.age.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.description.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.dob.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.firstName.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.initial.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.lastName.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.sex.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.userName.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                data.tags.toLowerCase().includes(event.target.value.toLowerCase())) {
+                return data
+            }
+        })
+        this.setState({
+            populateForms: items
+        })
+    }
+
     render() {
         return (
             <div className="row m-0">
+                <AddFormHeader search={this.state.search} onChangeSearch={this.onChangeSearch} editTypeIndex={this.props.editTypeIndex}></AddFormHeader>
                 <div class="col-12">
                     <div class="jumbotron" style={{ 'background': '#F1F7FC' }}>
                         <div className="row">
                             {
-                                this.state.forms.map((form, index) => {
+                                this.state.populateForms.map((form, index) => {
                                     return (
-                                        <div className="col-3 mb-2 pl-0" >
+                                        <div className="col-lg-3 mb-2 pl-lg-0 col-12" >
                                             <UserCard userDetails={form} key={index} addNote={this.addNote} editTypeIndex={this.props.editTypeIndex} deleteForm={this.deleteForm}></UserCard>
                                         </div>
                                     )

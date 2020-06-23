@@ -125,7 +125,7 @@ class AddForm extends Component {
         }
         return (
             <div class="modal fade" id="addFormModal" tabindex="-1" role="dialog" aria-labelledby="addFormModalLabel" aria-hidden="true">
-                <div class="modal-dialog maxWidth80">
+                <div class="modal-dialog modalDialogWidth">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addFormModalLabel">{this.props.type == "add" ? "Add" : "Edit"} Form</h5>
