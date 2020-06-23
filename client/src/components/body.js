@@ -29,7 +29,7 @@ class Body extends Component {
     render() {
         return (
             <div>
-                <ShowForms editTypeIndex={this.editTypeIndex} editTypeData={this.editTypeData} populateForms={this.state.populateForms} populateData={this.populateData}></ShowForms>
+                <ShowForms editTypeIndex={this.editTypeIndex} populateForms={this.state.populateForms} populateData={this.populateData}></ShowForms>
                 <AddForm type={this.state.type} index={this.state.index} data={this.state.formData} populateData={this.populateData}></AddForm>
             </div>
         )

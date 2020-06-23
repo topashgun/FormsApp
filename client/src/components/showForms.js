@@ -112,13 +112,15 @@ class ShowForm extends Component {
                     <div class="jumbotron" style={{ 'background': '#F1F7FC' }}>
                         <div className="row">
                             {
-                                this.state.populateForms.map((form, index) => {
-                                    return (
-                                        <div className="col-lg-3 mb-2 pl-lg-0 col-12" >
-                                            <UserCard userDetails={form} key={index} addNote={this.addNote} editTypeIndex={this.props.editTypeIndex} deleteForm={this.deleteForm}></UserCard>
-                                        </div>
-                                    )
-                                })
+                                this.state.populateForms.length == 0
+                                    ? <div className="col-12"><div class="alert alert-warning text-center" role="alert">No Forms to Show</div></div>
+                                    : this.state.populateForms.map((form, index) => {
+                                        return (
+                                            <div className="col-lg-3 mb-2 pl-lg-0 col-12" >
+                                                <UserCard userDetails={form} key={index} addNote={this.addNote} editTypeIndex={this.props.editTypeIndex} deleteForm={this.deleteForm}></UserCard>
+                                            </div>
+                                        )
+                                    })
                             }
                         </div>
                     </div>
