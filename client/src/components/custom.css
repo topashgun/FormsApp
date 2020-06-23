@@ -1,0 +1,85 @@
+.navbar {
+  align-items: baseline !important;
+}
+.addFormDiv {
+  padding: 15px 0 15px 15px;
+}
+
+.addFormDiv div[class*="col"] {
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+#uploadButtonDiv {
+  display: flex;
+}
+.fileUploadBorderRadiusZero > div {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.uploadButton {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.jumbotron {
+  padding: 2rem !important;
+}
+.expansionPanelHead {
+  background-color: #4c516b !important;
+  color: white !important;
+  border-radius: 10px !important;
+}
+.jumbotron .MuiPaper-root {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.expansionPanelDetails {
+  background-color: white !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+.expansionPanelHead.Mui-expanded {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.MuiIconButton-root {
+  color: white !important;
+}
+.panelBodyTableIcon {
+  color: #4caf50;
+}
+.successSnackBar .MuiSnackbarContent-root {
+  color: #fff;
+  font-weight: 500;
+  background-color: #4caf50;
+}
+.maxWidth80 {
+  max-width: 80%;
+}
+.MuiExpansionPanelSummary-content.Mui-expanded {
+  margin: 0 !important;
+}
+.jumbotron .MuiExpansionPanelSummary-root.Mui-expanded {
+  min-height: 48px;
+}
+.tagButton {
+  margin: 5px;
+}
+.selectedTags {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.selectedTagCenterAlign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tableDetails td {
+  padding: 5px;
+}
+td.panelBodyTableIcon {
+  width: 35px;
+  text-align: center;
+}
