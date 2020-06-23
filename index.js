@@ -7,10 +7,10 @@ app.use(cors());
 
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'forms'
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'b8d0adfed37cad',
+    password: '655293f0',
+    database: 'heroku_5f8fd6523b2b2f8'
 })
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
